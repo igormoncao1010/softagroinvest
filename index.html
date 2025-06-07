@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Soft AgroInvest</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: sans-serif;
+    }
+
+    header {
+      padding: 1rem 0;
+      position: relative;
+      z-index: 10;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 0 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .nav {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav a {
+      color: black;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    /* Vídeo de fundo */
+    .video-container {
+      position: relative;
+      width: 100%;
+      height: 90vh;
+      overflow: hidden;
+    }
+
+    .video-container video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      z-index: 1;
+      transform: translate(-50%, -50%);
+      object-fit: cover;
+      filter: brightness(0.7);
+    }
+
+    .video-overlay {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      text-align: center;
+      color: white;
+      padding: 2rem;
+    }
+
+    .hero-text {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 1.2s ease-out forwards;
+    }
+
+    .hero-text h1 {
+      font-size: 2.8rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .hero-text p {
+      font-size: 1.4rem;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background: #2ecc71;
+        flex-direction: column;
+        align-items: center;
+        display: none;
+      }
+
+      .nav.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .hero-text h1 {
+        font-size: 1.8rem;
+      }
+
+      .hero-text p {
+        font-size: 1rem;
+      }
+
+      .video-container {
+        height: 70vh;
+      }
+    }
+
+
+
+
+
+
+.recuperacao-tributaria {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 40px;
+}
+
+.recuperacao-tributaria .texto {
+  flex: 1;
+}
+
+.recuperacao-tributaria h1 {
+  font-size: 2.8rem;
+  color: black;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.recuperacao-tributaria p {
+  font-size: 1.2rem;
+  color: gray;
+  line-height: 1.5;
+  margin-bottom: 25px; /* espaço para o botão */
+}
+
+.btn-acao {
+  background-color: black;
+  color: #fff;
+  border: none;
+  padding: 14px 28px;
+  font-size: 1.1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-acao:hover {
+  background-color: #1f5d1f;
+}
+
+.recuperacao-tributaria .imagem {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.recuperacao-tributaria .imagem img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .recuperacao-tributaria {
+    flex-direction: column;
+    text-align: center;
+  }
+  .recuperacao-tributaria .imagem {
+    justify-content: center;
+    margin-top: 25px;
+  }
+  .recuperacao-tributaria h1 {
+    font-size: 2rem;
+  }
+  .recuperacao-tributaria p {
+    font-size: 1rem;
+  }
+  .btn-acao {
+    font-size: 1rem;
+    padding: 12px 24px;
+  }
+}
+
+
+
+
+
+
+
+
+
+.diferenciais {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.secao-titulo {
+  font-size: 2.5rem;
+  color: #2a7a2a;
+  margin-bottom: 40px;
+  font-weight: 700;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+  height: 270px; /* AUMENTA O TAMANHO DO CARD */
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+.card img {
+  margin-bottom: 20px;
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.card-conteudo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* empurra o conteúdo para ter espaço */
+  padding: 60px 20px 30px 20px;  /* top right bottom left */
+  text-align: left;
+  gap: 16px;
+}
+
+.card-conteudo h3 {
+  margin-top: 50px; /* Espaço entre a imagem e o título */
+  font-size: 1.3rem;
+  color: #2a7a2a;
+  margin-bottom: 10px;
+}
+
+
+.card-conteudo p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.4;
+}
+
+/* Responsivo */
+@media (max-width: 992px) {
+  .cards-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .cards-container {
+    grid-template-columns: 1fr;
+  }
+  .card img {
+    height: 150px;
+  }
+}
+
+
+
+
+
+
+
+.whatsapp-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+  width: 60px;
+  height: 60px;
+  background-color: #25D366;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: pulse 1.8s infinite;
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-button:hover {
+  transform: scale(1.1);
+}
+
+.whatsapp-button img {
+  width: 28px;
+  height: 28px;
+}
+
+/* Efeito pulsante */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+
+
+
+
+
+
+.site-footer {
+  background-color: black;
+  padding: 40px 20px 20px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  color: white;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto 20px;
+  gap: 20px;
+}
+
+.footer-logo img {
+  height: 60px;
+}
+
+.footer-info {
+  text-align: right;
+  flex: 1;
+}
+
+.footer-info .endereco {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.instagram-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+}
+
+.instagram-link img {
+  width: 20px;
+  height: 20px;
+}
+
+.footer-bottom {
+  font-size: 13px;
+  color: white;
+  border-top: 1px solid #ddd;
+  padding-top: 10px;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-info {
+    text-align: center;
+  }
+}
+
+
+
+
+
+
+
+.form-section {
+  display: flex;
+  justify-content: center;
+  padding: 60px 20px;
+  background-color: ghostwhite;
+}
+
+.form-contato {
+  background: #fff;
+  padding: 40px;
+  max-width: 500px;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.form-contato h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 15px;
+  background-color: #fafafa;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #25d366;
+  outline: none;
+  background-color: #fff;
+}
+
+.form-contato button {
+  background-color: #25d366;
+  color: white;
+  padding: 14px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.form-contato button:hover {
+  background-color: #1ebe5d;
+  transform: scale(1.03);
+}
+
+
+
+
+
+.carousel-section {
+  max-width: 1100px;
+  margin: 60px auto;
+  padding: 0 20px;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.carousel-section h2 {
+  padding: 10px;
+  background-color: black;
+  margin-bottom: 20px;
+  font-size: 28px;
+  color: white;
+}
+
+.carousel-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-track-container {
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.4s ease-in-out;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.carousel-item {
+  flex: 0 0 10%; /* mostra 10 logos */
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: auto;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+}
+
+.carousel-item img:hover {
+  filter: none;
+}
+
+
+@media (max-width: 768px) {
+  .carousel-item {
+    flex: 0 0 20%; /* 5 logos visíveis no mobile */
+  }
+}
+
+
+
+
+
+.blog-section {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.blog-section h2 {
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 40px;
+  color: #222;
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.blog-card {
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.blog-card:hover {
+  transform: translateY(-5px);
+}
+
+.blog-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.blog-info {
+  padding: 20px;
+}
+
+.blog-meta {
+  font-size: 13px;
+  color: #777;
+  margin-bottom: 8px;
+}
+
+.blog-title {
+  font-size: 18px;
+  color: #222;
+  line-height: 1.4;
+}
+
+.read-more {
+  display: inline-block;
+  margin-top: 16px;
+  color: #25d366;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.read-more:hover {
+  color: #1ebe5d;
+}
+
+
+
+
+
+
+
+.presenca-section {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centraliza horizontalmente */
+  gap: 20px;
+  padding: 60px 20px;
+  max-width: 100%;
+  font-family: 'Segoe UI', sans-serif;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.gps-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gps-logo svg {
+  width: 60px;
+  height: 60px;
+}
+
+.presenca-texto p {
+  font-size: 18px;
+  margin: 0;
+  color: #333;
+}
+
+.presenca-texto h2 {
+  font-size: 24px;
+  margin: 5px 0 0 0;
+  color: #25d366;
+}
+
+.cursor {
+  display: inline-block;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
+}
+
+
+  </style>
+</head>
+<body>
+  <header>
+  <div class="container">
+    <!-- Substituí o texto por uma imagem -->
+    <div class="logo">
+      <img src="logo/logo.svg" alt="Logo" style="height: 40px;">
+    </div>
+    <nav id="menu" class="nav">
+      <a href="#">Quem Somos</a>
+      <a href="#">FAQ</a>
+      <a href="#">Login</a>
+    </nav>
+    <div class="menu-toggle" id="toggle-btn">&#9776;</div>
+  </div>
+</header>
+
+
+  <!-- Vídeo de fundo -->
+<div class="video-container">
+  <video autoplay muted loop playsinline>
+    <source src="videos/background.mp4" type="video/mp4">
+    Seu navegador não suporta vídeo HTML5.
+  </video>
+  
+  <!-- Camada preta semi-transparente -->
+  <div class="black-overlay"></div>
+  
+  <!-- Texto sobre o vídeo -->
+  <div class="video-overlay">
+    <div class="hero-text">
+      <h1>Recuperação Tributária Inteligente para sua Empresa</h1>
+      <p>Otimize seus recursos recuperando créditos fiscais com agilidade e transparência.</p>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+<section class="recuperacao-tributaria">
+  <div class="texto">
+    <h1>Reduza Custos e Aumente 
+o Lucro com Soluções 
+Fiscais Inteligentes</h1>
+    <p>Nosso objetivo é garantir que sua empresa 
+pague apenas o que é justo e aproveite ao 
+máximo todos os benefícios tributários 
+previstos em lei.</p>
+    <button class="btn-acao">Saiba Mais</button>
+  </div>
+  <div class="imagem">
+    <img src="imagens/mini-banner/01.png" alt="Recuperação Tributária">
+  </div>
+</section>
+
+
+
+
+
+
+
+
+<section class="diferenciais">
+  <div class="cards-container">
+    <div class="card">
+      <img src="imagens/servicos/01.png" alt="Diferencial 1">
+      <h3>Recuperação Tributária</h3>
+      <p>Consultoria Tributária Federal.</p>
+    </div>
+    <div class="card">
+      <img src="imagens/servicos/02.png" alt="Diferencial 2">
+      <h3>Problemas na CND</h3>
+      <p>Pendências fiscais ou tributárias.</p>
+    </div>
+    <div class="card">
+      <img src="imagens/servicos/03.png" alt="Diferencial 3">
+      <h3>Débitos Previdenciários</h3>
+      <p>Ações fiscais e possíveis execuções judiciais.</p>
+    </div>
+    <div class="card">
+      <img src="imagens/servicos/04.png" alt="Diferencial 4">
+      <h3>Débitos na PGF-N</h3>
+      <p>Até 95% de desconto.</p>
+    </div>
+    <div class="card">
+      <img src="imagens/servicos/05.png" alt="Diferencial 5">
+      <h3>Problemas na RFB</h3>
+      <p>Abatimento e Parcelamento.</p>
+    </div>
+    <div class="card">
+      <img src="imagens/servicos/06.png" alt="Diferencial 6">
+      <h3>Problemas no IBAMA</h3>
+      <p>Administrativo e Judicializado.</p>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+<section class="recuperacao-tributaria">
+  <div class="texto">
+    <h1>Gestão Tributária</h1>
+    <p>A gestão tributária é um componente fundamental no planejamento estratégico empresarial. Acompanhamos as constantes atualizações legais para diminuir riscos de irregularidade com o fisco, permitindo operações mais vantajosas e econômicas. Com nossa gestão, sua empresa alcança uma conformidade dinâmica e econômica.</p>
+    <button class="btn-acao">Saiba Mais</button>
+  </div>
+  <div class="imagem">
+    <img src="imagens/mini-banner/02.jpeg" alt="Recuperação Tributária">
+  </div>
+</section>
+
+
+
+
+
+
+<section class="carousel-section">
+  <h2>Clientes Satisfeitos</h2>
+  <div class="carousel-container">
+   
+    
+    <div class="carousel-track-container">
+      <ul class="carousel-track">
+        <li class="carousel-item"><img src="imagens/clientes/01.png" alt="Cliente 1"></li>
+        <li class="carousel-item"><img src="imagens/clientes/02.png" alt="Cliente 2"></li>
+        <li class="carousel-item"><img src="imagens/clientes/03.png" alt="Cliente 3"></li>
+        <li class="carousel-item"><img src="imagens/clientes/04.png" alt="Cliente 4"></li>
+        <li class="carousel-item"><img src="imagens/clientes/05.png" alt="Cliente 5"></li>
+        <li class="carousel-item"><img src="imagens/clientes/06.png" alt="Cliente 6"></li>
+        <li class="carousel-item"><img src="imagens/clientes/07.png" alt="Cliente 7"></li>
+        <li class="carousel-item"><img src="imagens/clientes/08.png" alt="Cliente 8"></li>
+        <li class="carousel-item"><img src="imagens/clientes/09.png" alt="Cliente 9"></li>
+        <li class="carousel-item"><img src="imagens/clientes/10.png" alt="Cliente 10"></li>
+      </ul>
+    </div>
+   
+  </div>
+</section>
+
+
+
+
+
+
+
+<section class="blog-section">
+  <h2>Você também vai se interessar</h2>
+  <div class="blog-grid">
+    
+    <article class="blog-card">
+      <img src="imagens/materias/01.jpg" alt="Imagem da matéria">
+      <div class="blog-info">
+        <p class="blog-meta">05/06/2025 às 10:30 • 3 min de leitura</p>
+        <h3 class="blog-title">Como a Recuperação Tributária Pode Ajudar Sua Empresa</h3>
+        <a href="materia1.html" class="read-more">Leia mais</a>
+      </div>
+    </article>
+
+    <article class="blog-card">
+      <img src="imagens/materias/02.jpg" alt="Imagem da matéria">
+      <div class="blog-info">
+        <p class="blog-meta">04/06/2025 às 16:15 • 4 min de leitura</p>
+        <h3 class="blog-title">5 Créditos Tributários que Poucos Conhecem</h3>
+        <a href="materia2.html" class="read-more">Leia mais</a>
+      </div>
+    </article>
+
+    <article class="blog-card">
+      <img src="imagens/materias/03.jpg" alt="Imagem da matéria">
+      <div class="blog-info">
+        <p class="blog-meta">03/06/2025 às 09:00 • 2 min de leitura</p>
+        <h3 class="blog-title">Recuperação de ICMS: O Que Você Precisa Saber</h3>
+        <a href="materia3.html" class="read-more">Leia mais</a>
+      </div>
+    </article>
+
+  </div>
+</sec>
+
+
+
+
+
+<section class="presenca-section">
+  <div class="gps-logo">
+    <!-- Ícone GPS em SVG -->
+    <svg width="60" height="60" viewBox="0 0 24 24" fill="#25d366" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 2C8.13401 2 5 5.13401 5 9C5 13.25 12 22 12 22C12 22 19 13.25 19 9C19 5.13401 15.866 2 12 2ZM12 11.5C10.3431 11.5 9 10.1569 9 8.5C9 6.84315 10.3431 5.5 12 5.5C13.6569 5.5 15 6.84315 15 8.5C15 10.1569 13.6569 11.5 12 11.5Z"/>
+    </svg>
+  </div>
+  <div class="presenca-texto">
+    <p>A <strong>SOFT AgroInvest</strong> está presente em:</p>
+    <h2><span id="digitando"></span><span class="cursor">|</span></h2>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+<a href="https://wa.me/SEUNUMERO" class="whatsapp-button" target="_blank" aria-label="Fale conosco pelo WhatsApp">
+  <img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="WhatsApp">
+</a>
+
+
+
+
+
+
+<footer class="site-footer">
+  <div class="footer-container">
+   
+    
+    <div class="footer-info">
+    
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 Soft AgroInvest. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+
+
+  <script>
+    const locais = [
+    "Distrito Federal",
+    "Bahia",
+    "Goiás",
+    "São Paulo",
+    "Lisboa"
+  ];
+
+  let i = 0;
+  let j = 0;
+  let atual = "";
+  let apagando = false;
+
+  function digitar() {
+    const texto = locais[i];
+    if (!apagando && j < texto.length) {
+      atual += texto.charAt(j++);
+      document.getElementById("digitando").textContent = atual;
+      setTimeout(digitar, 100);
+    } else if (apagando && j > 0) {
+      atual = texto.substring(0, --j);
+      document.getElementById("digitando").textContent = atual;
+      setTimeout(digitar, 50);
+    } else {
+      apagando = !apagando;
+      if (!apagando) i = (i + 1) % locais.length;
+      setTimeout(digitar, 1000);
+    }
+  }
+
+  digitar();
+
+
+
+
+
+
+
+    const track = document.querySelector('.carousel-track');
+const prevBtn = document.querySelector('.carousel-btn.prev');
+const nextBtn = document.querySelector('.carousel-btn.next');
+
+const itemWidth = track.querySelector('.carousel-item').offsetWidth;
+const totalItems = track.children.length;
+let currentIndex = 0;
+const maxIndex = totalItems - 10; // quantidade que cabe na tela (desktop)
+
+prevBtn.addEventListener('click', () => {
+  if (currentIndex > 0) {
+    currentIndex--;
+    moveCarousel();
+  }
+});
+
+nextBtn.addEventListener('click', () => {
+  if (currentIndex < maxIndex) {
+    currentIndex++;
+    moveCarousel();
+  }
+});
+
+function moveCarousel() {
+  const distance = currentIndex * itemWidth;
+  track.style.transform = `translateX(-${distance}px)`;
+}
+
+
+
+
+
+
+    document.getElementById("form-contato").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const nome = document.getElementById("nome").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const mensagem = document.getElementById("mensagem").value.trim();
+
+    const texto = `Olá! Tenho um contato via site:\n\n*Nome:* ${nome}\n*Email:* ${email}\n*Mensagem:* ${mensagem}`;
+    const url = `https://wa.me/5561996067198?text=${encodeURIComponent(texto)}`;
+
+    window.open(url, '_blank');
+  });
+
+
+
+
+
+
+
+    const toggleBtn = document.getElementById('toggle-btn');
+    const menu = document.getElementById('menu');
+    toggleBtn.addEventListener('click', () => {
+      menu.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>
