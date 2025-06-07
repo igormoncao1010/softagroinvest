@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FAQ - Soft AgroInvest</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #000;
+      color: #fff;
+    }
+
+    .faq-section {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 80px 20px;
+    }
+
+    .faq-section h2 {
+      font-size: 36px;
+      color: #00c853;
+      text-align: center;
+      margin-bottom: 60px;
+      font-weight: 600;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #111;
+    }
+
+    .faq-question {
+      background: transparent;
+      border: none;
+      width: 100%;
+      text-align: left;
+      padding: 24px 0;
+      font-size: 20px;
+      font-weight: 500;
+      color: #fff;
+      cursor: pointer;
+      position: relative;
+      transition: color 0.2s ease;
+    }
+
+    .faq-question::after {
+      content: '+';
+      position: absolute;
+      right: 0;
+      top: 24px;
+      color: #00c853;
+      font-size: 22px;
+      transition: transform 0.3s ease;
+    }
+
+    .faq-item.open .faq-question::after {
+      transform: rotate(45deg);
+    }
+
+    .faq-question:hover {
+      color: #00c853;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+      color: #ccc;
+      font-size: 16px;
+      padding-right: 20px;
+    }
+
+    .faq-item.open .faq-answer {
+      max-height: 300px;
+      padding: 0 0 20px;
+    }
+
+    @media (max-width: 600px) {
+      .faq-section h2 {
+        font-size: 28px;
+      }
+
+      .faq-question {
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="faq-section">
+    <h2>Perguntas Frequentes</h2>
+
+    <div class="faq-item">
+      <button class="faq-question">O que é a Soft AgroInvest?</button>
+      <div class="faq-answer">
+        <p>Uma empresa especializada em soluções financeiras para o agronegócio, empresas e pessoas físicas.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">Quais serviços são oferecidos?</button>
+      <div class="faq-answer">
+        <p>Crédito rural, crédito PJ, fusões e aquisições, commodities, recuperação tributária e pessoal, entre outros.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">Quem pode contratar?</button>
+      <div class="faq-answer">
+        <p>Produtores rurais, empresas de todos os portes e pessoas físicas que buscam soluções financeiras inteligentes.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">Onde atuam?</button>
+      <div class="faq-answer">
+        <p>Estamos presentes no Distrito Federal, Goiás, Bahia, São Paulo e Lisboa, com atuação nacional e internacional.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">Como entrar em contato?</button>
+      <div class="faq-answer">
+        <p>Você pode falar conosco pelo WhatsApp, formulário do site ou redes sociais da Soft AgroInvest.</p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    document.querySelectorAll('.faq-question').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const item = btn.parentElement;
+        const isOpen = item.classList.contains('open');
+
+        document.querySelectorAll('.faq-item').forEach((el) => el.classList.remove('open'));
+
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+  </script>
+
+</body>
+</html>
