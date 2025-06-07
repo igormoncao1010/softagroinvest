@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fusão e Aquisição de Empresas - Soft AgroInvest</title>
+  <meta name="description" content="Especialistas em fusão e aquisição de empresas no setor agro, oferecendo segurança, transparência e suporte estratégico para o crescimento do seu negócio." />
+  <style>
+    /* Reset básico */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #121914; /* fundo verde escuro */
+      color: #e6f2e6; /* texto claro */
+      line-height: 1.5;
+    }
+
+    header {
+      background-color: rgba(18, 25, 20, 0.95);
+      padding: 15px 30px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 2px solid #4caf50; /* verde vibrante */
+    }
+
+    header .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    header .logo img {
+      height: 50px;
+      display: block;
+      filter: brightness(1.2);
+    }
+
+    header .logo span {
+      color: #81c784; /* verde claro */
+      font-weight: 700;
+      font-size: 1.25rem;
+      user-select: none;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 100px auto 40px;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    main h1 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: #a5d6a7; /* verde claro */
+      margin-bottom: 15px;
+      animation: fadeInUp 1s ease both;
+    }
+
+    main p.intro {
+      font-size: 1rem;
+      color: #cde8cd; /* verde claro suave */
+      margin-bottom: 30px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      animation: fadeInUp 1.3s ease both;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background-color: #4caf50; /* verde vibrante */
+      color: #121914;
+      padding: 12px 30px;
+      border-radius: 6px;
+      font-weight: 700;
+      text-decoration: none;
+      border: none;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      animation: pulse 2s infinite;
+    }
+
+    .cta-button:hover,
+    .cta-button:focus {
+      background-color: #66bb6a;
+      transform: scale(1.05);
+      outline: none;
+    }
+
+    .hero-image {
+      margin: 25px auto 40px;
+      display: block;
+      border-radius: 8px;
+      max-width: 100%;
+      height: auto;
+      animation: fadeInUp 1.6s ease both;
+    }
+
+    section.features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+
+    .feature {
+      background: #1b2a1b; /* verde escuro */
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+      transition: background-color 0.3s ease;
+      animation: fadeInUp 1.8s ease both;
+    }
+
+    .feature:hover {
+      background-color: #357a38; /* verde médio */
+      cursor: default;
+    }
+
+    .feature h3 {
+      font-size: 1.25rem;
+      margin-bottom: 10px;
+      color: #81c784; /* verde claro */
+    }
+
+    .feature p {
+      font-size: 0.95rem;
+      color: #cde8cd;
+    }
+
+    .feature-icon {
+      font-size: 34px;
+      color: #4caf50;
+      margin-bottom: 14px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    footer {
+      background-color: rgba(18, 25, 20, 0.95);
+      color: #cde8cd;
+      text-align: center;
+      padding: 18px 15px;
+      font-size: 0.85rem;
+      user-select: none;
+      border-top: 2px solid #4caf50;
+      animation: fadeInUp 2s ease both;
+    }
+
+    /* Animações */
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.6); }
+      70% { box-shadow: 0 0 0 12px rgba(76, 175, 80, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(76, 175, 80, 0); }
+    }
+
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsividade */
+    @media (max-width: 768px) {
+      main h1 {
+        font-size: 1.8rem;
+      }
+
+      .cta-button {
+        padding: 10px 24px;
+        font-size: 0.95rem;
+      }
+
+      section.features {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="logo">
+    <img src="logo/logo.svg" alt="Soft AgroInvest Logo" />
+    
+  </div>
+</header>
+
+<main>
+  <h1>Fusão e Aquisição de Empresas</h1>
+  <p class="intro">
+    A Soft AgroInvest oferece consultoria especializada para fusões e aquisições, auxiliando sua empresa a crescer com segurança, transparência e estratégia.
+  </p>
+  <a href="https://wa.me/5561996067198" target="_blank" rel="noopener" class="cta-button" aria-label="Fale com especialista no WhatsApp">
+    Fale com um Consultor
+  </a>
+
+  <img class="hero-image" src="imagens/paginas/06.jpg" alt="Reunião corporativa para fusão e aquisição de empresas" />
+
+  <section class="features" aria-label="Vantagens da fusão e aquisição">
+    <article class="feature" tabindex="0">
+      <div class="feature-icon" aria-hidden="true">🤝</div>
+      <h3>Estratégia Personalizada</h3>
+      <p>Analisamos seu negócio para desenvolver soluções sob medida que maximizam valor e minimizam riscos.</p>
+    </article>
+
+    <article class="feature" tabindex="0">
+      <div class="feature-icon" aria-hidden="true">📊</div>
+      <h3>Due Diligence Completa</h3>
+      <p>Avaliamos detalhadamente aspectos financeiros, legais e operacionais para garantir negociações seguras.</p>
+    </article>
+
+    <article class="feature" tabindex="0">
+      <div class="feature-icon" aria-hidden="true">🔒</div>
+      <h3>Confidencialidade Garantida</h3>
+      <p>Protegemos informações sensíveis durante todo o processo para preservar sua vantagem competitiva.</p>
+    </article>
+
+    <article class="feature" tabindex="0">
+      <div class="feature-icon" aria-hidden="true">📈</div>
+      <h3>Suporte Pós-Negociação</h3>
+      <p>Acompanhamos a integração e crescimento após a fusão ou aquisição para assegurar o sucesso da operação.</p>
+    </article>
+  </section>
+</main>
+
+<footer>
+  &copy; 2025 Soft AgroInvest - Todos os direitos reservados.
+</footer>
+</body>
+</html>

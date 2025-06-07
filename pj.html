@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Crédito Pessoa Jurídica - Soft AgroInvest</title>
+  <meta name="description" content="Soluções de crédito para empresas do setor agropecuário. A Soft AgroInvest oferece linhas de financiamento para crescimento e capital de giro.">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', sans-serif; background-color: #000; color: #fff; }
+    header { position: fixed; top: 0; left: 0; width: 100%; background: rgba(0, 0, 0, 0.85); padding: 20px; text-align: center; z-index: 1000; border-bottom: 1px solid #00c853; }
+    .logo-soft img { height: 60px; }
+    main { margin-top: 100px; }
+
+    .section-credito {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 40px;
+      background: linear-gradient(145deg, #000, #111);
+      gap: 60px;
+      flex-wrap: wrap;
+    }
+
+    .credito-texto {
+      max-width: 600px;
+      animation: fadeInUp 1.2s ease both;
+    }
+
+    .credito-texto h1 {
+      font-size: 3rem;
+      color: #00c853;
+      margin-bottom: 20px;
+    }
+
+    .credito-texto p {
+      font-size: 1.2rem;
+      color: #e0e0e0;
+      line-height: 1.6;
+      margin-bottom: 40px;
+    }
+
+    .btn-whatsapp {
+      background-color: #00c853;
+      color: #000;
+      padding: 15px 30px;
+      font-size: 1rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform 0.3s ease;
+      display: inline-block;
+    }
+
+    .btn-whatsapp:hover {
+      animation: pulse 1s infinite;
+      transform: scale(1.05);
+    }
+
+    .credito-img {
+      max-width: 400px;
+      width: 100%;
+      animation: fadeInUp 1.5s ease both;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(0, 200, 83, 0.6); }
+      70% { box-shadow: 0 0 0 12px rgba(0, 200, 83, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(0, 200, 83, 0); }
+    }
+
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .section-info {
+      background: #111;
+      padding: 60px 40px;
+      max-width: 900px;
+      margin: 0 auto 60px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 200, 83, 0.3);
+      color: #d0d0d0;
+      animation: fadeInUp 1.2s ease both;
+    }
+
+    .section-info h2 {
+      color: #00c853;
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .section-info h3 {
+      font-size: 1.6rem;
+      margin-bottom: 15px;
+      color: #a0e0a0;
+    }
+
+    .section-info p, .section-info ul {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .section-info ul {
+      padding-left: 20px;
+      list-style-type: disc;
+      color: #c0ffc0;
+    }
+
+    .section-info ul li {
+      margin-bottom: 10px;
+    }
+
+    @media (max-width: 768px) {
+      .section-credito {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 80px 20px;
+      }
+      .credito-texto h1 {
+        font-size: 2.2rem;
+      }
+      .credito-texto p {
+        font-size: 1rem;
+      }
+      .btn-whatsapp {
+        width: 100%;
+      }
+      .credito-img {
+        margin-top: 40px;
+      }
+
+      .section-info {
+        padding: 40px 20px;
+      }
+      .section-info h2 {
+        font-size: 2rem;
+      }
+      .section-info h3 {
+        font-size: 1.3rem;
+      }
+      .section-info p, .section-info ul {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo-soft">
+    <img src="logo/logo.svg" alt="Logo da Soft AgroInvest">
+  </div>
+</header>
+
+<main>
+  <section class="section-credito">
+    <div class="credito-texto">
+      <h1>Crédito para Pessoa Jurídica</h1>
+      <p>
+        A <strong>Soft AgroInvest</strong> oferece soluções financeiras para empresas do setor agropecuário, facilitando o acesso a crédito para capital de giro, investimentos e expansão dos negócios.<br><br>
+        Contamos com parcerias com mais de <strong>40 bancos e fintechs</strong> para disponibilizar as melhores condições para a sua empresa.
+      </p>
+      <a class="btn-whatsapp" href="https://wa.me/5561996067198" target="_blank" rel="noopener noreferrer">
+        Fale com um Consultor
+      </a>
+    </div>
+    <img class="credito-img" src="imagens/paginas/03.avif" alt="Crédito Pessoa Jurídica" loading="lazy">
+  </section>
+
+  <section class="section-info" aria-label="Informações sobre linhas de crédito para pessoa jurídica">
+    <h2>Linhas de Crédito para Empresas Agropecuárias</h2>
+
+    <h3>Capital de Giro</h3>
+    <p>Financiamento para manter o funcionamento da empresa, compra de insumos, pagamento de despesas operacionais e fluxo de caixa.</p>
+
+    <h3>Investimentos e Expansão</h3>
+    <p>Linhas específicas para aquisição de máquinas, equipamentos, infraestrutura e melhorias na propriedade.</p>
+
+    <h3>Antecipação de Recebíveis</h3>
+    <p>Antecipe pagamentos futuros para manter a liquidez e aproveitar oportunidades de negócio.</p>
+
+    <h3>Cartão Empresarial e Crédito Rotativo</h3>
+    <p>Soluções práticas para despesas do dia a dia, com controle financeiro facilitado e prazos flexíveis.</p>
+
+    <h3>Linhas Especiais para Agro</h3>
+    <ul>
+      <li><strong>Financiamento BNDES:</strong> projetos de modernização e inovação para empresas do agronegócio.</li>
+      <li><strong>Programa de Sustentabilidade:</strong> crédito para práticas ambientais e tecnologias sustentáveis.</li>
+      <li><strong>FCO Agro:</strong> crédito para investimentos e custeio em regiões Centro-Oeste e Norte.</li>
+    </ul>
+  </section>
+</main>
+
+<script>
+  document.querySelector('.btn-whatsapp').addEventListener('click', function() {
+    if(typeof gtag === 'function') {
+      gtag('event', 'click', {
+        'event_category': 'Contato',
+        'event_label': 'WhatsApp PJ',
+        'value': 1
+      });
+    }
+    if(typeof fbq === 'function') {
+      fbq('track', 'Contact', {method: 'WhatsApp'});
+    }
+  });
+</script>
+
+</body>
+</html>

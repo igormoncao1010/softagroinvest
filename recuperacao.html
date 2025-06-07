@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Recuperação de Crédito Pessoal - Soft AgroInvest</title>
+  <meta name="description" content="Soft AgroInvest ajuda na recuperação do seu crédito pessoal, removendo apontamentos negativos em entidades de proteção, BACEN e melhorando seu rating bancário e score." />
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #121914;
+      color: #e6f2e6;
+      line-height: 1.5;
+    }
+
+    header {
+      background-color: rgba(18, 25, 20, 0.95);
+      padding: 15px 30px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 2px solid #4caf50;
+    }
+
+    header .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    header .logo img {
+      height: 50px;
+      display: block;
+      filter: brightness(1.2);
+    }
+
+    header .logo span {
+      color: #81c784;
+      font-weight: 700;
+      font-size: 1.25rem;
+      user-select: none;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 100px auto 40px;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    main h1 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: #a5d6a7;
+      margin-bottom: 15px;
+      animation: fadeInUp 1s ease both;
+    }
+
+    main p.intro {
+      font-size: 1.1rem;
+      color: #cde8cd;
+      margin-bottom: 30px;
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+      animation: fadeInUp 1.3s ease both;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background-color: #4caf50;
+      color: #121914;
+      padding: 14px 32px;
+      border-radius: 6px;
+      font-weight: 700;
+      text-decoration: none;
+      border: none;
+      font-size: 1.05rem;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      animation: pulse 2s infinite;
+    }
+
+    .cta-button:hover,
+    .cta-button:focus {
+      background-color: #66bb6a;
+      transform: scale(1.05);
+      outline: none;
+    }
+
+    .hero-image {
+      margin: 30px auto 40px;
+      display: block;
+      border-radius: 8px;
+      max-width: 100%;
+      height: auto;
+      animation: fadeInUp 1.6s ease both;
+    }
+
+    section.features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+
+    .feature {
+      background: #1b2a1b;
+      padding: 22px;
+      border-radius: 8px;
+      text-align: center;
+      transition: background-color 0.3s ease;
+      animation: fadeInUp 1.8s ease both;
+    }
+
+    .feature:hover {
+      background-color: #357a38;
+      cursor: default;
+    }
+
+    .feature h3 {
+      font-size: 1.3rem;
+      margin-bottom: 12px;
+      color: #81c784;
+    }
+
+    .feature p {
+      font-size: 1rem;
+      color: #cde8cd;
+    }
+
+    .feature-icon {
+      font-size: 36px;
+      color: #4caf50;
+      margin-bottom: 14px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    footer {
+      background-color: rgba(18, 25, 20, 0.95);
+      color: #cde8cd;
+      text-align: center;
+      padding: 18px 15px;
+      font-size: 0.85rem;
+      user-select: none;
+      border-top: 2px solid #4caf50;
+      animation: fadeInUp 2s ease both;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.6); }
+      70% { box-shadow: 0 0 0 12px rgba(76, 175, 80, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(76, 175, 80, 0); }
+    }
+
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      main h1 {
+        font-size: 1.8rem;
+      }
+
+      .cta-button {
+        padding: 12px 26px;
+        font-size: 1rem;
+      }
+
+      section.features {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="logo">
+    <img src="logo/logo.svg" alt="Soft AgroInvest Logo" />
+
+  </div>
+</header>
+
+<main>
+  <h1>Recuperação de Crédito Pessoal</h1>
+  <p class="intro">
+    A <strong>Soft AgroInvest</strong> é especialista em remover apontamentos negativos nas principais entidades de proteção ao crédito, no BACEN, e em ajudar você a aumentar seu rating bancário e score para melhorar seu acesso a crédito.
+  </p>
+  <a href="https://wa.me/5561996067198" target="_blank" rel="noopener" class="cta-button" aria-label="Fale com especialista no WhatsApp">
+    Fale com um Especialista
+  </a>
+
+  <img class="hero-image" src="imagens/paginas/07.jpg" alt="Recuperação de crédito pessoal, com remoção de restrições" />
+
+  <section class="features" aria-label="Serviços de recuperação de crédito pessoal">
+    <article class="feature" tabindex="0">
+      <div class="feature-icon" aria-hidden="true">❌</div>
+      <h3>Remoção de Apontamentos Negativos</h3>
+      <p>Exclusão de registros negativos nas entidades de proteção ao crédito para limpar seu nome.</p>
+    </article>
+
+    <article class="feature" tabindex="0">
+      <div class="feature-icon" aria-hidden="true">🏦</div>
+      <h3>Remoção de Apontamentos no BACEN</h3>
+      <p>Tratamento especializado para eliminar restrições no Banco Central.</p>
+    </article>
+
+    <article class="feature" tabindex="0">
+      <div class="feature-icon" aria-hidden="true">📈</div>
+      <h3>Aumento de Rating Bancário</h3>
+      <p>Melhoria do seu rating para aumentar confiança junto às instituições financeiras.</p>
+    </article>
+
+    <article class="feature" tabindex="0">
+      <div class="feature-icon" aria-hidden="true">⭐</div>
+      <h3>Aumento do Score de Crédito</h3>
+      <p>Estratégias para elevar seu score e facilitar aprovação de novos créditos.</p>
+    </article>
+  </section>
+</main>
+
+<footer>
+  &copy; 2025 Soft AgroInvest - Todos os direitos reservados.
+</footer>
+</body>
+</html>

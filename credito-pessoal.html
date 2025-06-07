@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Crédito Pessoal - Soft AgroInvest</title>
+  <meta name="description" content="Crédito pessoal com segurança e agilidade. A Soft AgroInvest atua com mais de 40 parceiros para ajudar você a conquistar seus objetivos.">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+
+  <!-- Facebook Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'YOUR_PIXEL_ID');
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"/>
+  </noscript>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #000;
+      color: #fff;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.85);
+      padding: 20px;
+      text-align: center;
+      z-index: 1000;
+      border-bottom: 1px solid #00c853;
+    }
+
+    .logo-soft img {
+      height: 60px;
+    }
+
+    main {
+      margin-top: 100px;
+    }
+
+    .section-credito {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 40px;
+      background: linear-gradient(145deg, #000, #111);
+      gap: 60px;
+      flex-wrap: wrap;
+    }
+
+    .credito-texto {
+      max-width: 600px;
+      animation: fadeInUp 1.2s ease both;
+    }
+
+    .credito-texto h1 {
+      font-size: 3rem;
+      color: #00c853;
+      margin-bottom: 20px;
+    }
+
+    .credito-texto p {
+      font-size: 1.2rem;
+      color: #e0e0e0;
+      line-height: 1.6;
+      margin-bottom: 40px;
+    }
+
+    .btn-whatsapp {
+      background-color: #00c853;
+      color: #000;
+      padding: 15px 30px;
+      font-size: 1rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform 0.3s ease;
+      display: inline-block;
+    }
+
+    .btn-whatsapp:hover {
+      animation: pulse 1s infinite;
+      transform: scale(1.05);
+    }
+
+    .credito-img {
+      max-width: 400px;
+      width: 100%;
+      animation: fadeInUp 1.5s ease both;
+      border-radius: 10px;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(0, 200, 83, 0.6); }
+      70% { box-shadow: 0 0 0 12px rgba(0, 200, 83, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(0, 200, 83, 0); }
+    }
+
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .section-credito {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 80px 20px;
+      }
+
+      .credito-texto h1 {
+        font-size: 2.2rem;
+      }
+
+      .credito-texto p {
+        font-size: 1rem;
+      }
+
+      .btn-whatsapp {
+        width: 100%;
+      }
+
+      .credito-img {
+        margin-top: 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo-soft">
+      <img src="logo/logo.svg" alt="Logo da Soft AgroInvest">
+    </div>
+  </header>
+
+  <main>
+    <section class="section-credito">
+      <div class="credito-texto">
+        <h1>Crédito Pessoal com Segurança</h1>
+        <p>
+          A <strong>Soft AgroInvest</strong> atua há mais de <strong>10 anos</strong> no setor financeiro, ajudando brasileiros a alcançarem seus objetivos. <br><br>
+          Somos parceiros de mais de <strong>40 bancos e fintechs</strong>, oferecendo soluções rápidas e seguras para os mais diversos problemas financeiros.
+        </p>
+        <a class="btn-whatsapp" href="https://wa.me/5561996067198" target="_blank" rel="noopener noreferrer">
+          Fale com um Especialista
+        </a>
+      </div>
+      <img class="credito-img" src="imagens/paginas/01.webp" alt="Crédito Pessoal" loading="lazy">
+    </section>
+  </main>
+
+  <script>
+    document.querySelector('.btn-whatsapp').addEventListener('click', function() {
+      if(typeof gtag === 'function') {
+        gtag('event', 'click', {
+          'event_category': 'Contato',
+          'event_label': 'WhatsApp',
+          'value': 1
+        });
+      }
+      if(typeof fbq === 'function') {
+        fbq('track', 'Contact', {method: 'WhatsApp'});
+      }
+    });
+  </script>
+
+</body>
+</html>

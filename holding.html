@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Holdings Nacionais e Internacionais - Soft AgroInvest</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f6fdf9;
+      color: #1c1c1c;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #ffffff;
+      padding: 16px;
+      text-align: center;
+      z-index: 1000;
+      border-bottom: 2px solid #00c853;
+    }
+
+    .logo-soft img {
+      height: 55px;
+    }
+
+    .section-holding {
+      min-height: 100vh;
+      padding: 140px 30px 60px;
+      background: #f6fdf9;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .holding-texto {
+      max-width: 900px;
+      text-align: center;
+      animation: fadeInUp 1s ease both;
+    }
+
+    .holding-texto h1 {
+      font-size: 3rem;
+      color: #006837;
+      margin-bottom: 20px;
+    }
+
+    .holding-texto p {
+      font-size: 1.2rem;
+      color: #333;
+      margin-bottom: 30px;
+      line-height: 1.7;
+    }
+
+    .highlight {
+      font-weight: bold;
+      color: #2e7d32;
+    }
+
+    .btn-contato {
+      background-color: #00c853;
+      color: #fff;
+      padding: 14px 32px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      text-decoration: none;
+      animation: pulse 2s infinite;
+      transition: transform 0.3s ease;
+      margin-bottom: 40px;
+    }
+
+    .btn-contato:hover {
+      transform: scale(1.05);
+    }
+
+    .holding-item {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 40px;
+      animation: fadeInUp 1s ease both;
+    }
+
+    .holding-item img {
+      width: 220px;
+      border-radius: 10px;
+    }
+
+    .holding-item .description {
+      text-align: left;
+    }
+
+    .holding-item .description h3 {
+      font-size: 1.5rem;
+      color: #006837;
+      margin-bottom: 10px;
+    }
+
+    .holding-item .description p {
+      font-size: 1.1rem;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(0, 200, 83, 0.6); }
+      70% { box-shadow: 0 0 0 12px rgba(0, 200, 83, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(0, 200, 83, 0); }
+    }
+
+    @media (max-width: 768px) {
+      .holding-texto h1 {
+        font-size: 2.2rem;
+      }
+
+      .holding-texto p {
+        font-size: 1rem;
+      }
+
+      .btn-contato {
+        width: 100%;
+      }
+
+      .holding-item {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .holding-item img {
+        width: 100%;
+        max-width: 300px;
+      }
+
+      .holding-item .description {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-soft">
+      <img src="logo/logo.svg" alt="Soft AgroInvest">
+    </div>
+  </header>
+
+  <section class="section-holding">
+    <div class="holding-texto">
+      <h1>Holdings Nacionais e Internacionais</h1>
+      <p>
+        A <span class="highlight">Soft AgroInvest</span> é especialista em estruturas corporativas sofisticadas. Oferecemos consultoria na criação de <span class="highlight">Holdings Nacionais</span> e <span class="highlight">Internacionais</span>, com foco em planejamento patrimonial, sucessório, fiscal e de governança.
+      </p>
+
+      <div class="holding-item">
+        <img src="imagens/paginas/09.jpg" alt="Holding Familiar">
+        <div class="description">
+          <h3>Holding Familiar</h3>
+          <p>Planejamento sucessório eficiente e proteção de bens da família, evitando conflitos e garantindo segurança patrimonial.</p>
+        </div>
+      </div>
+
+      <div class="holding-item">
+        <img src="imagens/paginas/10.jpeg" alt="Holding Imobiliária">
+        <div class="description">
+          <h3>Holding Imobiliária</h3>
+          <p>Gestão e centralização de imóveis com otimização tributária e facilidade de administração e transmissão de bens.</p>
+        </div>
+      </div>
+
+      <div class="holding-item">
+        <img src="imagens/paginas/11.jfif" alt="Holding de Participações">
+        <div class="description">
+          <h3>Holding de Participações</h3>
+          <p>Estruturação para controle e organização de empresas e investimentos, com maior eficiência e segurança jurídica.</p>
+        </div>
+      </div>
+
+      <div class="holding-item">
+        <img src="imagens/paginas/12.png" alt="Holding Internacional">
+        <div class="description">
+          <h3>Holding Internacional</h3>
+          <p>Estrutura global voltada à proteção de ativos, planejamento tributário internacional e expansão de negócios.</p>
+        </div>
+      </div>
+
+      <p>
+        A estrutura de uma holding proporciona benefícios como redução de carga tributária, blindagem patrimonial, sucessão organizada e maior controle sobre os ativos. Entre em contato com nossos especialistas para conhecer a melhor estratégia para sua empresa ou patrimônio familiar.
+      </p>
+      <a class="btn-contato" href="https://wa.me/5561996067198" target="_blank">
+        Solicite Consultoria Especializada
+      </a>
+    </div>
+  </section>
+</body>
+</html>

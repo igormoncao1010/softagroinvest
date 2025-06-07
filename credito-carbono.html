@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Créditos de Carbono CBIO - Soft AgroInvest</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f0f8f3;
+      color: #222;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(240, 255, 240, 0.95);
+      padding: 20px;
+      text-align: center;
+      z-index: 1000;
+      border-bottom: 1px solid #4caf50;
+    }
+
+    .logo-soft img {
+      height: 60px;
+    }
+
+    .section-carbono {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 120px 40px 60px;
+      background: linear-gradient(145deg, #f0f8f3, #e2f5e7);
+      text-align: center;
+    }
+
+    .carbono-texto {
+      max-width: 800px;
+      animation: fadeInUp 1s ease both;
+    }
+
+    .carbono-texto h1 {
+      font-size: 2.8rem;
+      color: #2e7d32;
+      margin-bottom: 20px;
+    }
+
+    .carbono-texto p {
+      font-size: 1.2rem;
+      color: #444;
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+
+    .btn-contato {
+      background-color: #4caf50;
+      color: #fff;
+      padding: 14px 28px;
+      font-size: 1rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform 0.3s ease;
+      animation: pulse 2s infinite;
+    }
+
+    .btn-contato:hover {
+      transform: scale(1.05);
+    }
+
+    .carbono-img {
+      margin-top: 40px;
+      max-width: 500px;
+      width: 100%;
+      border-radius: 10px;
+      animation: fadeInUp 1.5s ease both;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.6); }
+      70% { box-shadow: 0 0 0 12px rgba(76, 175, 80, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(76, 175, 80, 0); }
+    }
+
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .carbono-texto h1 {
+        font-size: 2rem;
+      }
+
+      .carbono-texto p {
+        font-size: 1rem;
+      }
+
+      .btn-contato {
+        width: 100%;
+      }
+
+      .carbono-img {
+        margin-top: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-soft">
+      <img src="logo/logo.svg" alt="Soft AgroInvest">
+    </div>
+  </header>
+
+  <section class="section-carbono">
+    <div class="carbono-texto">
+       <img class="carbono-img" src="imagens/paginas/08.jpg" alt="Créditos de Carbono CBIO">
+      <h1>Negociação e Certificação de Créditos de Carbono (CBIO)</h1>
+      <p>
+        A <strong>Soft AgroInvest</strong> oferece soluções completas para produtores e empresas que desejam atuar no mercado de créditos de carbono. Nossa equipe cuida de toda a certificação CBIO, bem como da intermediação para negociação eficiente e segura no mercado.<br><br>
+        Transforme sua produção em ativos sustentáveis e rentáveis.
+      </p>
+      <a class="btn-contato" href="https://wa.me/5561996067198" target="_blank">
+        Fale com um Especialista
+      </a>
+    </div>
+   
+  </section>
+</body>
+</html>
