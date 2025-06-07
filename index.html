@@ -18,92 +18,106 @@
 
 
 
-    /* Vídeo de fundo */
-    .video-container {
-      position: relative;
-      width: 100%;
-      height: 90vh;
-      overflow: hidden;
-    }
+ .video-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
 
-    .video-container video {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      min-width: 100%;
-      min-height: 100%;
-      width: auto;
-      height: auto;
-      z-index: 1;
-      transform: translate(-50%, -50%);
-      object-fit: cover;
-      filter: brightness(0.7);
-    }
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center; /* Desktop: foco central */
+  z-index: 1;
+}
 
-    .video-overlay {
-      position: relative;
-      z-index: 2;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100%;
-      text-align: center;
-      color: white;
-      padding: 2rem;
-    }
+@media (max-width: 480px) {
+  .bg-video {
+    object-position: 75% center; /* Mobile: foca do meio pra direita */
+  }
+}
 
-    .hero-text {
-      opacity: 0;
-      transform: translateY(30px);
-      animation: fadeInUp 1.2s ease-out forwards;
-    }
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
 
-    .hero-text h1 {
-      font-size: 2.8rem;
-      margin-bottom: 0.8rem;
-    }
+.content {
+  position: relative;
+  z-index: 3;
+  color: white;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0 20px;
+}
 
-    .hero-text p {
-      font-size: 1.4rem;
-    }
+.content h1 {
+  font-size: 2.5em;
+  margin-bottom: 0.5em;
+}
 
-    @keyframes fadeInUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+.content p {
+  font-size: 1.2em;
+}
 
-    @media (max-width: 768px) {
-      .nav {
-        position: absolute;
-        top: 60px;
-        left: 0;
-        right: 0;
-        background: #2ecc71;
-        flex-direction: column;
-        align-items: center;
-        display: none;
-      }
+@media (max-width: 768px) {
+  .content h1 {
+    font-size: 2em;
+  }
 
-      .nav.active {
-        display: flex;
-      }
+  .content p {
+    font-size: 1em;
+  }
+}
 
-    
+@media (max-width: 480px) {
+  .content h1 {
+    font-size: 1.5em;
+  }
 
-      .hero-text h1 {
-        font-size: 1.8rem;
-      }
+  .content p {
+    font-size: 0.9em;
+  }
+}
 
-      .hero-text p {
-        font-size: 1rem;
-      }
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-      .video-container {
-        height: 70vh;
-      }
-    }
+.fade-in-up {
+  opacity: 0;
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+/* Se quiser adicionar delay nos elementos individualmente */
+.fade-in-up:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.fade-in-up:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+
+
+
 
 
 
@@ -921,25 +935,20 @@
 
   
 
-
-  <!-- Vídeo de fundo -->
-<div class="video-container">
-  <video autoplay muted loop playsinline>
-    <source src="videos/background.mp4" type="video/mp4">
-    Seu navegador não suporta vídeo HTML5.
+<section class="video-section">
+  <video autoplay muted loop playsinline class="bg-video">
+    <source src="videos/background.mp4" type="video/mp4" />
+    Seu navegador não suporta vídeos em HTML5.
   </video>
-  
-  <!-- Camada preta semi-transparente -->
-  <div class="black-overlay"></div>
-  
-  <!-- Texto sobre o vídeo -->
-  <div class="video-overlay">
-    <div class="hero-text">
-      <h1>Recuperação Tributária Inteligente para sua Empresa</h1>
-      <p>Otimize seus recursos recuperando créditos fiscais com agilidade e transparência.</p>
-    </div>
-  </div>
+
+  <div class="overlay"></div>
+
+  <div class="content">
+  <h1 class="fade-in-up">Recuperação Tributária Inteligente para sua Empresa</h1>
+  <p class="fade-in-up" style="animation-delay: 0.3s">Otimize seus recursos recuperando créditos fiscais com agilidade e transparência</p>
 </div>
+</section>
+
 
 
 
