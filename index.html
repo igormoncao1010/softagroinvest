@@ -1293,7 +1293,14 @@ previstos em lei.</p>
 
 
  
-
+window.addEventListener("DOMContentLoaded", () => {
+    const video = document.getElementById("bgVideo");
+    if (video) {
+      video.play().catch((e) => {
+        console.log("Autoplay bloqueado, tentando forçar reprodução...", e);
+      });
+    }
+  });
 
 
 
