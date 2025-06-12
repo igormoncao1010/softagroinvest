@@ -2,9 +2,8 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BlackDiamond Bus</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Soft AgroInvest</title>
   <style>
     * {
       margin: 0;
@@ -13,268 +12,275 @@
     }
 
     body, html {
-      font-family: 'Poppins', sans-serif;
-      background-color: #ffffff;
-      color: #222;
       height: 100%;
+      font-family: sans-serif;
     }
 
-    header {
-      background-color: #000;
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1rem 2rem;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
 
-    .logo img {
-      height: 40px;
-    }
 
-    .nav ul {
-      display: flex;
-      list-style: none;
-      gap: 2rem;
-    }
-
-    .nav a {
-      text-decoration: none;
-      color: #fff;
-      font-weight: 300;
-      transition: color 0.3s;
-    }
-
-    .nav a:hover {
-      color: #C8A951;
-    }
-
-    .menu-toggle {
-      display: none;
-      font-size: 1.5rem;
-      cursor: pointer;
-      color: #fff;
-    }
-
-    .hero-video-container {
+ .video-section {
       position: relative;
       width: 100%;
       height: 100vh;
       overflow: hidden;
     }
 
-    .hero-video-container video {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      min-width: 100%;
-      min-height: 100%;
-      width: auto;
-      height: auto;
-      z-index: 0;
-      transform: translate(-50%, -50%);
-      object-fit: cover;
-    }
-
-    /* Overlay escuro */
-    .hero-video-container::before {
-      content: "";
+    .bg-video {
       position: absolute;
       top: 0;
       left: 0;
-      height: 100%;
       width: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
       z-index: 1;
     }
 
-    .hero-content {
+    @media (max-width: 480px) {
+      .bg-video {
+        object-position: 75% center; /* foco mais pra direita no mobile */
+      }
+    }
+
+    .overlay {
       position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
       z-index: 2;
+    }
+
+    .content {
+      position: relative;
+      z-index: 3;
+      color: white;
       text-align: center;
-      color: #fff;
-      animation: fadeIn 2s ease-in-out;
+      top: 50%;
+      transform: translateY(-50%);
+      padding: 0 20px;
     }
 
-    .hero-content h1 {
-      font-size: 2.1rem; /* aumentado em 10% */
-      color: #C8A951;
-      margin-bottom: 1rem;
+    .content h1 {
+      font-size: 2.5em;
+      margin-bottom: 0.5em;
     }
 
-    .hero-content p {
-      font-size: 1.43rem; /* aumentado em 10% */
-      font-weight: 300;
+    .content p {
+      font-size: 1.2em;
     }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translate(-50%, -60%); }
-      to   { opacity: 1; transform: translate(-50%, -50%); }
-    }
-
-   
 
     @media (max-width: 768px) {
-      .nav ul {
-        flex-direction: column;
-        background-color: #111;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        width: 200px;
-        display: none;
+      .content h1 {
+        font-size: 2em;
       }
 
-      .nav ul.active {
-        display: flex;
-      }
-
-      .menu-toggle {
-        display: block;
-      }
-
-      .hero-content h1 {
-        font-size: 2.2rem;
-      }
-
-      .hero-content p {
-        font-size: 1.1rem;
+      .content p {
+        font-size: 1em;
       }
     }
 
-   .info-cards-section01 {
-  background-color: white;
-  padding: 4rem 2rem;
-  color: white;
+    @media (max-width: 480px) {
+      .content h1 {
+        font-size: 1.5em;
+      }
+
+      .content p {
+        font-size: 0.9em;
+      }
+    }
+
+    /* Animação de entrada */
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in-up {
+      opacity: 0;
+      animation: fadeInUp 1s ease-out forwards;
+    }
+
+    .fade-in-up:nth-child(1) {
+      animation-delay: 0.1s;
+    }
+
+    .fade-in-up:nth-child(2) {
+      animation-delay: 0.3s;
+    }
+
+
+.recuperacao-tributaria {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 40px;
+}
+
+.recuperacao-tributaria .texto {
+  flex: 1;
+}
+
+.recuperacao-tributaria h1 {
+  font-size: 2.8rem;
+  color: black;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.recuperacao-tributaria p {
+  font-size: 1.2rem;
+  color: gray;
+  line-height: 1.5;
+  margin-bottom: 25px; /* espaço para o botão */
+}
+
+.btn-acao {
+  background-color: black;
+  color: #fff;
+  border: none;
+  padding: 14px 28px;
+  font-size: 1.1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-acao:hover {
+  background-color: #1f5d1f;
+}
+
+.recuperacao-tributaria .imagem {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.recuperacao-tributaria .imagem img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .recuperacao-tributaria {
+    flex-direction: column;
+    text-align: center;
+  }
+  .recuperacao-tributaria .imagem {
+    justify-content: center;
+    margin-top: 25px;
+  }
+  .recuperacao-tributaria h1 {
+    font-size: 2rem;
+  }
+  .recuperacao-tributaria p {
+    font-size: 1rem;
+  }
+  .btn-acao {
+    font-size: 1rem;
+    padding: 12px 24px;
+  }
+}
+
+
+.diferenciais {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 20px;
   text-align: center;
 }
 
-.info-cards-container01 {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
+.secao-titulo {
+  font-size: 2.5rem;
+  color: #2a7a2a;
+  margin-bottom: 40px;
+  font-weight: 700;
 }
 
-.info-card01 {
-  background-color: #111;
-  padding: 2rem 1.5rem;
-  border-radius: 12px;
-  width: 280px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
-  transition: transform 0.3s ease, opacity 0.3s ease;
-  opacity: 0;
-  transform: translateY(40px);
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
 }
 
-.info-card01 img {
-  width: 60px;
-  height: 60px;
-  margin-bottom: 1rem;
-  filter: brightness(1.2);
-}
-
-.info-card01 h3 {
-  color: #C8A951;
-  font-size: 1.3rem;
-  margin-top: 0;
-}
-
-/* Efeito ao entrar na tela */
-.info-card01.show01 {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-
-.form-section {
-  background-image: url('imagens/background/01.png');
-  background-size: cover;
-  background-position: center;
-  padding: 4rem 2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #fff;
-  position: relative;
-}
-
-.form-section::before {
-  content: "";
-  background: rgba(0, 0, 0, 0.6);
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  z-index: 1;
-}
-
-.form-content {
-  display: flex;
-  flex-wrap: wrap;
-  max-width: 1200px;
-  width: 100%;
-  z-index: 2;
-  position: relative;
-  gap: 2rem;
-}
-
-.text-left {
-  flex: 1;
-  min-width: 280px;
-}
-
-.text-left h2 {
-  font-size: 2rem;
-  color: #C8A951;
-  margin-bottom: 1rem;
-}
-
-.text-left p {
-  font-size: 1rem;
-  font-weight: 300;
-}
-
-form {
-  flex: 1;
-  min-width: 280px;
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  transition: transform 0.3s ease;
+  height: 270px; /* AUMENTA O TAMANHO DO CARD */
 }
 
-form input,
-form textarea {
-  padding: 0.75rem;
-  border: none;
-  border-radius: 5px;
+.card:hover {
+  transform: translateY(-8px);
+}
+
+.card img {
+  margin-bottom: 20px;
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.card-conteudo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* empurra o conteúdo para ter espaço */
+  padding: 60px 20px 30px 20px;  /* top right bottom left */
+  text-align: left;
+  gap: 16px;
+}
+
+.card-conteudo h3 {
+  margin-top: 50px; /* Espaço entre a imagem e o título */
+  font-size: 1.3rem;
+  color: #2a7a2a;
+  margin-bottom: 10px;
+}
+
+
+.card-conteudo p {
   font-size: 1rem;
+  color: #555;
+  line-height: 1.4;
 }
 
-form button {
-  background-color: #C8A951;
-  color: #000;
-  font-weight: 600;
-  padding: 0.8rem;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background 0.3s;
+/* Responsivo */
+@media (max-width: 992px) {
+  .cards-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-form button:hover {
-  background-color: #b39141;
+@media (max-width: 600px) {
+  .cards-container {
+    grid-template-columns: 1fr;
+  }
+  .card img {
+    height: 150px;
+  }
 }
 
 
-.whatsapp-float {
+.whatsapp-button {
   position: fixed;
   bottom: 20px;
   right: 20px;
@@ -283,29 +289,30 @@ form button:hover {
   height: 60px;
   background-color: #25D366;
   border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   display: flex;
-  justify-content: center;
   align-items: center;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  animation: pulse 2s infinite;
+  justify-content: center;
+  animation: pulse 1.8s infinite;
   transition: transform 0.3s ease;
 }
 
-.whatsapp-float:hover {
+.whatsapp-button:hover {
   transform: scale(1.1);
 }
 
-.whatsapp-float img {
-  width: 32px;
-  height: 32px;
+.whatsapp-button img {
+  width: 28px;
+  height: 28px;
 }
 
+/* Efeito pulsante */
 @keyframes pulse {
   0% {
     box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6);
   }
   70% {
-    box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+    box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
   }
   100% {
     box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
@@ -313,773 +320,805 @@ form button:hover {
 }
 
 
-
-.fleet-section {
-  padding: 4rem 2rem;
-  background-color: #f8f8f8;
-}
-
-.fleet-content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  max-width: 1200px;
-  margin: 0 auto;
-  flex-wrap: wrap;
-  gap: 2rem;
-}
-
-.fleet-content.reverse {
-  flex-direction: row-reverse;
-}
-
-.fleet-text {
-  flex: 1;
-  min-width: 280px;
-}
-
-.fleet-text h2 {
-  font-size: 2rem;
-  color: #C8A951;
-  margin-bottom: 1rem;
-}
-
-.fleet-text p {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #333;
-}
-
-.fleet-image {
-  flex: 1;
-  min-width: 280px;
-  text-align: center;
-}
-
-.fleet-image img {
-  width: 100%;
-  max-width: 500px;
-  height: auto;
-
-}
-
-
-.testimonials-section {
-  background-color: #000;
-  color: #fff;
-  padding: 4rem 2rem;
-  text-align: center;
-}
-
-.testimonials-section h2 {
-  color: #C8A951;
-  font-size: 2rem;
-  margin-bottom: 2rem;
-}
-
-.testimonials-grid {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 2rem;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.testimonial {
-  background-color: #111;
-  border-left: 4px solid #C8A951;
-  padding: 1.5rem;
-  border-radius: 10px;
-  flex: 1 1 300px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-}
-
-.testimonial p {
-  font-style: italic;
-  margin-bottom: 1rem;
-  color: #eee;
-}
-
-.testimonial h4 {
-  color: #C8A951;
-  font-weight: 500;
-}
-
-
-.blog-section {
-  padding: 4rem 2rem;
-  background-color: white;
-  color: #eee;
-  max-width: 1200px;
-  margin: 0 auto 4rem auto;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.blog-section h2 {
-  font-size: 2.5rem;
-  color: black;
-  margin-bottom: 2rem;
-  text-align: center;
-}
-
-.blog-posts {
-  display: flex;
-  gap: 2rem;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.blog-post {
-  background-color: #222;
-  border-radius: 10px;
-  overflow: hidden;
-  flex: 1 1 300px;
-  max-width: 350px;
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.6);
-  transition: transform 0.3s ease;
-}
-
-.blog-post:hover {
-  transform: translateY(-10px);
-}
-
-.blog-post img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  display: block;
-}
-
-.post-info {
-  padding: 1.5rem;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.post-meta {
-  font-size: 0.9rem;
-  color: #bbb;
-  margin-bottom: 0.8rem;
-  display: flex;
-  justify-content: space-between;
-}
-
-.post-meta time {
-  font-style: normal;
-}
-
-.blog-post h3 {
-  font-size: 1.25rem;
-  margin-bottom: 1.2rem;
-  color: #fff;
-}
-
-.btn-read-more {
-  align-self: flex-start;
-  background-color: #C8A951;
-  color: #111;
-  padding: 0.5rem 1.3rem;
-  border-radius: 25px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: background-color 0.3s ease;
-}
-
-.btn-read-more:hover {
-  background-color: #a18736;
-}
-
-
-
-.tarja-preta {
-  background-color: #000;
-  color: #35d653;
-  padding: 4rem 1rem;
-  text-align: center;
-  overflow: hidden;
-}
-
-.conteudo {
-  max-width: 900px;
-  margin: 0 auto;
-  opacity: 0;
-  transform: translateY(40px);
-  animation: fadeUp 1s ease-out forwards;
-  animation-delay: 0.2s;
-}
-
-.tarja-preta.animar .conteudo {
-  animation-delay: 0.3s;
-}
-
-.titulo {
-  font-size: 3.5rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.subtitulo {
-  font-size: 1.6rem;
-  font-weight: 400;
-  color: #ddd;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeUp 1s ease-out forwards;
-  animation-delay: 0.6s;
-}
-
-@keyframes fadeUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Responsivo */
-@media (max-width: 600px) {
-  .titulo {
-    font-size: 2.2rem;
-  }
-  .subtitulo {
-    font-size: 1.2rem;
-  }
-}
-
-
-.highlight-section {
-  background-color: #35d653;
-  padding: 4rem 2rem;
-  color: #fff;
-}
-
-.highlight-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  flex-wrap: wrap;
-}
-
-.highlight-image {
-  flex: 1;
-  min-width: 250px;
-  text-align: center;
-}
-
-.highlight-image img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-.highlight-text {
-  flex: 1;
-  min-width: 250px;
-}
-
-.highlight-text h2 {
-  font-size: 2.5rem;
-  color: white;
-  margin-bottom: 1rem;
-}
-
-.highlight-text p {
-  font-size: 1.1rem;
-  color: #eee;
-  margin-bottom: 1.5rem;
-}
-
-.btn-metaverso {
+.site-footer {
   background-color: black;
+  padding: 40px 20px 20px;
+  text-align: center;
+  font-family: Arial, sans-serif;
   color: white;
-  padding: 0.7rem 1.5rem;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: transform 0.3s ease;
-  display: inline-block;
-}
-
-.pulse {
-  animation: pulseBtn 1.8s infinite;
-}
-
-@keyframes pulseBtn {
-  0% {
-    box-shadow: 0 0 0 0 rgba(200, 169, 81, 0.7);
-    transform: scale(1);
-  }
-  70% {
-    box-shadow: 0 0 0 15px rgba(200, 169, 81, 0);
-    transform: scale(1.05);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(200, 169, 81, 0);
-    transform: scale(1);
-  }
-}
-
-@media (max-width: 768px) {
-  .highlight-container {
-    flex-direction: column;
-    text-align: center;
-    gap: 0.5rem;
-  }
-
-  .highlight-image img {
-    max-width: 85%;
-    margin-top: -10px;
-  }
-
-  .highlight-text h2 {
-    margin-top: 0.5rem;
-  }
-}
-
-
-
-/* CSS do Footer */
-.footer-bdb {
-  background: #111;
-  color: #f0c000;
-  font-family: 'Poppins', sans-serif;
-  padding: 50px 20px 30px;
-  position: relative;
 }
 
 .footer-container {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   justify-content: space-between;
   max-width: 1200px;
-  margin: auto;
-  gap: 30px;
+  margin: 0 auto 20px;
+  gap: 20px;
 }
 
-.footer-column {
-  flex: 1 1 220px;
-  min-width: 200px;
+.footer-logo img {
+  height: 60px;
 }
 
-.footer-column h3,
-.footer-column h4 {
-  color: #fff;
-  margin-bottom: 15px;
+.footer-info {
+  text-align: right;
+  flex: 1;
 }
 
-.footer-column p,
-.footer-column ul li {
-  color: #ccc;
+.footer-info .endereco {
+  margin-bottom: 10px;
   font-size: 14px;
 }
 
-.footer-column ul {
-  list-style: none;
-  padding: 0;
-}
-
-.footer-column ul li a {
-  color: #f0c000;
+.instagram-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   text-decoration: none;
-  transition: color 0.3s;
+  color: white;
+  font-size: 14px;
 }
 
-.footer-column ul li a:hover {
-  color: #fff;
-}
-
-.newsletter-form {
-  display: flex;
-  gap: 10px;
-  margin-top: 10px;
-}
-
-.newsletter-form input {
-  padding: 10px;
-  border: none;
-  border-radius: 3px;
-  flex: 1;
-}
-
-.newsletter-form button {
-  background: #f0c000;
-  border: none;
-  padding: 10px 15px;
-  cursor: pointer;
-  color: #000;
-  border-radius: 3px;
-  transition: background 0.3s;
-}
-
-.newsletter-form button:hover {
-  background: #fff200;
-}
-
-.social-icons {
-  margin-top: 15px;
-}
-
-.social-icons a {
-  color: #f0c000;
-  margin-right: 10px;
-  font-size: 18px;
-  transition: color 0.3s;
-}
-
-.social-icons a:hover {
-  color: #fff;
+.instagram-link img {
+  width: 20px;
+  height: 20px;
 }
 
 .footer-bottom {
+  font-size: 13px;
+  color: white;
+  border-top: 1px solid #ddd;
+  padding-top: 10px;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-info {
+    text-align: center;
+  }
+}
+
+
+
+.blog-section {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.blog-section h2 {
+  font-size: 28px;
   text-align: center;
-  margin-top: 30px;
-  border-top: 1px solid #333;
-  padding-top: 15px;
+  margin-bottom: 40px;
+  color: #222;
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.blog-card {
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.blog-card:hover {
+  transform: translateY(-5px);
+}
+
+.blog-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.blog-info {
+  padding: 20px;
+}
+
+.blog-meta {
   font-size: 13px;
   color: #777;
+  margin-bottom: 8px;
 }
 
-
-/* CSS da section */
-.volvo-section {
-  padding: 60px 20px;
-  background-color: white;
-  font-family: 'Poppins', sans-serif;
-}
-
-.volvo-container {
-  max-width: 1200px;
-  margin: auto;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 40px;
-}
-
-.volvo-image img {
-  width: 100%;
-  max-width: 550px;
-
-}
-
-.volvo-text {
-  flex: 1;
-}
-
-.volvo-text h2 {
-  font-size: 2rem;
+.blog-title {
+  font-size: 18px;
   color: #222;
-  margin-bottom: 20px;
+  line-height: 1.4;
 }
 
-.volvo-text p {
-  margin-bottom: 12px;
-  color: #444;
-  line-height: 1.6;
-}
-
-.cta-button {
+.read-more {
   display: inline-block;
-  margin-top: 20px;
-  background-color: #f0c000;
-  color: #111;
-  padding: 12px 20px;
-  border-radius: 5px;
+  margin-top: 16px;
+  color: #25d366;
   text-decoration: none;
   font-weight: bold;
-  transition: background 0.3s;
+  transition: color 0.3s;
 }
 
-.cta-button:hover {
-  background-color: #ffd700;
+.read-more:hover {
+  color: #1ebe5d;
+}
+
+
+
+.presenca-section {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centraliza horizontalmente */
+  gap: 20px;
+  padding: 60px 20px;
+  max-width: 100%;
+  font-family: 'Segoe UI', sans-serif;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.gps-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gps-logo svg {
+  width: 60px;
+  height: 60px;
+}
+
+.presenca-texto p {
+  font-size: 18px;
+  margin: 0;
+  color: #333;
+}
+
+.presenca-texto h2 {
+  font-size: 24px;
+  margin: 5px 0 0 0;
+  color: #25d366;
+}
+
+.cursor {
+  display: inline-block;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
+}
+
+
+.servicos-section {
+  background: #2f302f;
+  color: #fff;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.servicos-section h2 {
+  color: #25d366;
+  font-size: 32px;
+  margin-bottom: 40px;
+}
+
+.servicos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.servico-card {
+  background: #111;
+  border-radius: 16px;
+  overflow: hidden;
+ 
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.servico-card:hover {
+  transform: translateY(-6px);
+
+}
+
+.servico-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+}
+
+.card-texto {
+  padding: 20px;
+  text-align: left;
+}
+
+.card-texto h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #fff;
+}
+
+.card-texto p {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #ccc;
+}
+
+
+.btn-saiba-mais {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 10px 20px;
+  background-color: #25d366;
+  color: #000;
+  font-weight: bold;
+  font-size: 14px;
+  text-decoration: none;
+  border-radius: 8px;
+  position: relative;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+.btn-saiba-mais:hover {
+  background-color: #25d366;
+  color: #fff;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 12px rgba(212, 175, 55, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(212, 175, 55, 0);
+  }
+}
+
+
+
+.hero-preto {
+  background-color: #000;
+  color: #fff;
+  padding: 100px 20px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+}
+
+.conteudo-hero h1 {
+  font-size: 40px;
+  color: #25d366;
+  margin-bottom: 16px;
+}
+
+.conteudo-hero p {
+  font-size: 18px;
+  color: #ccc;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(6px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      z-index: 999;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #00c853;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 16px;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #00c853;
+    }
+
+    .login-btn {
+      background-color: #00c853;
+      color: #000;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .login-btn:hover {
+      animation: pulse 1s infinite;
+      transform: scale(1.05);
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(0, 200, 83, 0.6); }
+      70% { box-shadow: 0 0 0 10px rgba(0, 200, 83, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(0, 200, 83, 0); }
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
+
+    .menu-toggle span {
+      width: 25px;
+      height: 3px;
+      background: #fff;
+      border-radius: 2px;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: flex;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: rgba(0, 0, 0, 0.95);
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+        display: none;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a,
+      .login-btn {
+        width: 100%;
+        padding: 10px 0;
+      }
+    }
+
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: auto;
+  padding: 30px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 400px;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.close:hover {
+  color: #000;
 }
 
   </style>
 </head>
 <body>
-  <header>
-    <div class="logo">
-      <img src="imagens/logos/logs.svg" alt="Logo BlackDiamond Bus" />
-    </div>
-    <nav class="nav">
-      <ul>
-        <li><a href="sobre-nos.html">Sobre Nós</a></li>
-        <li><a href="fichas.html">Catálogo</a></li>
-      </ul>
-    </nav>
-    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
-  </header>
 
-  <section class="hero-video-container">
-    <video autoplay muted loop playsinline>
-      <source src="videos/background/01.mp4" type="video/mp4">
-      Seu navegador não suporta vídeo HTML5.
+  <!-- Modal -->
+<div id="popupModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>ALERTA!</h2>
+    <p>Não forneca dados para pessoas não cadastradas na Soft, apenas os parceiros oficiais podem solicitar dados.</p>
+  </div>
+</div>
+
+
+<header>
+  <div class="logo">
+    <img src="logo/logo.svg" alt="Soft AgroInvest" style="height: 40px;">
+  </div>
+  <div class="menu-toggle" id="menu-toggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <nav class="nav-links" id="nav-links">
+    <a href="quemsomos.html">Quem Somos</a>
+    <a href="faq.html">FAQ</a>
+    <a href="juridico.html"><button class="login-btn">Login</button></a>
+  </nav>
+</header>
+
+
+<section class="video-section">
+    <video id="bgVideo" autoplay muted loop playsinline="auto" class="bg-video">
+      <source src="videos/background.mp4" type="video/mp4" />
+      Seu navegador não suporta vídeos em HTML5.
     </video>
-    <div class="hero-content">
-      <h1>Black Diamond Bus</h1>
-      <p>Excelência em aluguel de ônibus para prefeituras</p>
+
+    <div class="overlay"></div>
+
+    <div class="content">
+      <h1 class="fade-in-up">Recuperação Tributária Inteligente para sua Empresa</h1>
+      <p class="fade-in-up">Otimize seus recursos recuperando créditos fiscais com agilidade e transparência</p>
     </div>
   </section>
 
-  <section class="info-cards-section01" id="infoCards01">
-  <div class="info-cards-container01">
-    <div class="info-card01 hidden01">
-      <img src="imagens/logos/01.svg" alt="Ícone Sustentável" />
-      <h3>Tecnologia</h3>
-    </div>
-    <div class="info-card01 hidden01">
-      <img src="imagens/logos/02.svg" alt="Ícone Conforto" />
-      <h3>Segurança</h3>
-    </div>
-    <div class="info-card01 hidden01">
-      <img src="imagens/logos/03.svg" alt="Ícone Tecnologia" />
-      <h3>Economia</h3>
-    </div>
+
+<section class="recuperacao-tributaria">
+  <div class="texto">
+    <h1>Reduza Custos e Aumente 
+o Lucro com Soluções 
+Fiscais Inteligentes</h1>
+    <p>Nosso objetivo é garantir que sua empresa 
+pague apenas o que é justo e aproveite ao 
+máximo todos os benefícios tributários 
+previstos em lei.</p>
+    
+  </div>
+  <div class="imagem">
+    <img src="imagens/mini-banner/00.png" alt="Recuperação Tributária">
   </div>
 </section>
 
 
-  
-
-<section class="form-section">
-  <div class="form-content">
-    <div class="text-left">
-      <h2>Solicite a ATA do seu município</h2>
-      <p>Preencha o formulário e entraremos em contato via WhatsApp.</p>
-    </div>
-    <form id="whatsappForm">
-      <input type="text" name="nome" placeholder="Nome / Prefeitura" required />
-      <input type="cargo" name="cargo" placeholder="Cargo" required />
-      <input type="tel" name="telefone" placeholder="Telefone com DDD" required />
-      <input type="number" name="quantidade" placeholder="Quantos ônibus?" required min="1" />
-      <input type="date" name="data" placeholder="Data de retirada" required />
-      <textarea name="mensagem" placeholder="Mensagem adicional" rows="4"></textarea>
-      <button type="submit">Enviar</button>
-    </form>
+<section class="hero-preto">
+  <div class="conteudo-hero" data-aos="fade-up">
+    <h1>Transformando o Futuro Financeiro</h1>
+    <p>Especialistas em crédito, recuperação e soluções para o agronegócio</p>
   </div>
 </section>
 
-<a href="https://wa.me/+5561996067198" class="whatsapp-float" target="_blank" aria-label="Fale conosco no WhatsApp">
-  <img src="imagens/logos/wpp.svg" alt="WhatsApp" />
+
+<section class="diferenciais">
+  <div class="cards-container">
+    <div class="card">
+      <img src="imagens/servicos/01.png" alt="Diferencial 1">
+      <h3>Recuperação Tributária</h3>
+      <p>Consultoria Tributária Federal.</p>
+    </div>
+    <div class="card">
+      <img src="imagens/servicos/02.png" alt="Diferencial 2">
+      <h3>Problemas na CND</h3>
+      <p>Pendências fiscais ou tributárias.</p>
+    </div>
+    <div class="card">
+      <img src="imagens/servicos/03.png" alt="Diferencial 3">
+      <h3>Débitos Previdenciários</h3>
+      <p>Ações fiscais e possíveis execuções judiciais.</p>
+    </div>
+    <div class="card">
+      <img src="imagens/servicos/04.png" alt="Diferencial 4">
+      <h3>Débitos na PGF-N</h3>
+      <p>Até 95% de desconto.</p>
+    </div>
+    <div class="card">
+      <img src="imagens/servicos/05.png" alt="Diferencial 5">
+      <h3>Problemas na RFB</h3>
+      <p>Abatimento e Parcelamento.</p>
+    </div>
+    <div class="card">
+      <img src="imagens/servicos/06.png" alt="Diferencial 6">
+      <h3>Problemas no IBAMA</h3>
+      <p>Administrativo e Judicializado.</p>
+    </div>
+    <div class="card">
+      <img src="imagens/servicos/07.jpg" alt="Diferencial 6">
+      <h3>Problemas no INCRA</h3>
+      <p>Administrativo e Judicializado.</p>
+    </div>
+    <div class="card">
+      <img src="imagens/servicos/08.jpg" alt="Diferencial 6">
+      <h3>Dívidas bancárias</h3>
+      <p>Quitação de dívidas bancarias, BB e Caixa</p>
+    </div>
+
+  </div>
+</section>
+
+<section class="recuperacao-tributaria">
+  <div class="texto">
+    <h1>Assessoria Jurídica</h1>
+    <p>A Soft presta assessoria jurídica especializada nas áreas cível, penal e criminal, contando com a parceria dos profissionais mais gabaritados do mercado para oferecer segurança, eficiência e excelência em cada atendimento.</p>
+   <a href="assessoria-juridica.html" target="_blank">
+  <button class="btn-acao">Saiba Mais</button>
 </a>
 
-
-<section class="tarja-preta animar">
-  <div class="conteudo">
-    <h1 class="titulo">Aluguel de Ônibus Euro 6 e Elétricos</h1>
-    <p class="subtitulo">A Black Diamond Bus tem o que há de melhor para sua prefeitura.</p>
+  </div>
+  <div class="imagem">
+    <img src="imagens/mini-banner/03.jpg" alt="Recuperação Tributária">
   </div>
 </section>
 
 
 
-<!-- Section com imagem à esquerda e informações à direita -->
-<section class="volvo-section">
-  <div class="volvo-container">
-    <div class="volvo-image">
-      <img src="imagens/carros/01.png" />
-    </div>
-    <div class="volvo-text">
-      <h2>Volvo B340R Euro 6</h2>
-      <p><strong>Potência:</strong> 380 cv | <strong>Torque:</strong> 1.800 Nm</p>
-      <p><strong>Motor:</strong> Volvo D11K – 6 cilindros em linha, com injeção eletrônica e turbo</p>
-      <p><strong>Transmissão:</strong> Automatizada Volvo I-Shift com 12 marchas</p>
-      <p><strong>Freios:</strong> A disco com EBS, ABS, VEB+ e sistema de estabilidade ESP</p>
-      <p><strong>Suspensão:</strong> Pneumática com controle eletrônico e função rebaixamento</p>
-      <p><strong>Categoria de emissões:</strong> Euro 6 / Proconve P-8</p>
-      <a href="volvo.html.html" class="btn-metaverso pulse">Finha Técnica</a>
-    </div>
-  </div>
-</section>
-
-
-
-
-<section class="highlight-section">
-  <div class="highlight-container">
-    <div class="highlight-image">
-      <img src="imagens/carros/02.png" alt="Ônibus Volvo 7900" />
-    </div>
-    <div class="highlight-text">
-      <h2>Volvo 7900</h2>
-      <p>Modelo 100% elétrico, silencioso e sustentável. Ideal para cidades inteligentes e empresas que se preocupam com o futuro.</p>
-      <a href="metaverso.html" class="btn-metaverso pulse">Metaverso</a>
+<section class="servicos-section">
+  <h2>Outros Serviços</h2>
+  <div class="servicos-grid">
     
-    </div>
-  </div>
-</section>
+    <div class="servico-card" data-aos="fade-up">
+      <img src="imagens/creditos/01.webp" alt="Agro" />
+      <div class="card-texto">
+        <h3>Crédito para Agronegócio</h3>
+        <p>Financiamento estratégico para produtores e empresas do campo.</p>
+        <a href="agro.html" class="btn-saiba-mais">Saiba mais</a>
 
-
-
-
-
-<section class="testimonials-section">
-  <div class="container">
-    <h2>Municípios que confiam em nós</h2>
-    <div class="testimonials-grid">
-      <div class="testimonial">
-        <p>"A Black Diamond Bus superou nossas expectativas. Atendimento impecável e frota moderna."</p>
-        <h4>Alto do Paraíso</h4>
-      </div>
-
-      <div class="testimonial">
-        <p>"Atualizamos toda frota ônibus com a Black Diamond."</p>
-        <h4>Vale grande</h4>
-      </div>
-
-      <div class="testimonial">
-        <p>"Eles são referência em qualidade."</p>
-        <h4>Festolina</h4>
       </div>
     </div>
+
+    <div class="servico-card" data-aos="fade-up" data-aos-delay="100">
+      <img src="imagens/creditos/02.jpg" alt="Pessoal" />
+      <div class="card-texto">
+        <h3>Crédito Pessoal</h3>
+        <p>Empréstimos sob medida para suas necessidades individuais.</p>
+        <a href="credito-pessoal.html" class="btn-saiba-mais">Saiba mais</a>
+
+      </div>
+    </div>
+
+    <div class="servico-card" data-aos="fade-up" data-aos-delay="200">
+      <img src="imagens/creditos/03.jpg" alt="PJ" />
+      <div class="card-texto">
+        <h3>Crédito PJ</h3>
+        <p>Capital de giro e soluções financeiras para empresas.</p>
+        <a href="pj.html" class="btn-saiba-mais">Saiba mais</a>
+
+      </div>
+    </div>
+
+    <div class="servico-card" data-aos="fade-up" data-aos-delay="300">
+      <img src="imagens/creditos/04.jfif" alt="Commodities" />
+      <div class="card-texto">
+        <h3>Negociação de Commodities</h3>
+        <p>Intermediação de soja, milho, café e mais.</p>
+        <a href="comodities.html" class="btn-saiba-mais">Saiba mais</a>
+
+      </div>
+    </div>
+
+    <div class="servico-card" data-aos="fade-up" data-aos-delay="400">
+      <img src="imagens/creditos/05.jfif" alt="Fusão e Aquisição" />
+      <div class="card-texto">
+        <h3>Fusão e Aquisição</h3>
+        <p>Assessoria em operações de compra e venda de empresas.</p>
+        <a href="fusao-aquisicao.html" class="btn-saiba-mais">Saiba mais</a>
+
+      </div>
+    </div>
+
+    <div class="servico-card" data-aos="fade-up" data-aos-delay="500">
+      <img src="imagens/creditos/06.webp" alt="Recuperação" />
+      <div class="card-texto">
+        <h3>Recuperação de Crédito Pessoal</h3>
+        <p>Renegociação e reestruturação de dívidas para CPF.</p>
+        <a href="recuperacao.html" class="btn-saiba-mais">Saiba mais</a>
+
+      </div>
+    </div>
+
+    <div class="servico-card" data-aos="fade-up" data-aos-delay="600">
+      <img src="imagens/creditos/07.jfif" alt="Carbono" />
+      <div class="card-texto">
+        <h3>Crédito de Carbono</h3>
+        <p>Gestão de ativos ambientais e compensação de emissões.</p>
+        <a href="credito-carbono.html" class="btn-saiba-mais">Saiba mais</a>
+
+      </div>
+    </div>
+
+        <div class="servico-card" data-aos="fade-up" data-aos-delay="600">
+      <img src="imagens/creditos/08.jpg" alt="Carbono" />
+      <div class="card-texto">
+        <h3>Holding</h3>
+        <p>Criação de holding familiares, imobiliárias e de participação</p>
+        <a href="holding.html" class="btn-saiba-mais">Saiba mais</a>
+
+      </div>
+    </div>
+
   </div>
 </section>
 
 
 
 <section class="blog-section">
-  <h2>Conteúdo Relevante</h2>
-  <div class="blog-posts">
-
-    <article class="blog-post">
-      <img src="imagens/blog/01.webp" alt="Ônibus Elétrico Volvo" />
-      <div class="post-info">
-        <div class="post-meta">
-          <time datetime="2025-06-10T14:30">10 de Junho, 14:30</time>
-          <span class="reading-time">5 min de leitura</span>
-        </div>
-        <h3>Volvo lança nova linha de ônibus elétricos para transporte urbano</h3>
-        <a href="onibus-eletrico.html" class="btn-read-more">Ler mais</a>
+  <h2>Você também vai se interessar</h2>
+  <div class="blog-grid">
+    
+    <article class="blog-card">
+      <img src="imagens/materias/01.jpg" alt="Imagem da matéria">
+      <div class="blog-info">
+        <p class="blog-meta">05/06/2025 às 10:30 • 3 min de leitura</p>
+        <h3 class="blog-title">Como a Recuperação Tributária Pode Ajudar Sua Empresa</h3>
+        <a href="materia1.html" class="read-more">Leia mais</a>
       </div>
     </article>
 
-    <article class="blog-post">
-      <img src="imagens/blog/02.webp" alt="Manutenção preventiva" />
-      <div class="post-info">
-        <div class="post-meta">
-          <time datetime="2025-05-20T09:00">20 de Maio, 09:00</time>
-          <span class="reading-time">4 min de leitura</span>
-        </div>
-        <h3>Importância da manutenção preventiva para ônibus de frota</h3>
-        <a href="manutencao-preventiva.html" class="btn-read-more">Ler mais</a>
+    <article class="blog-card">
+      <img src="imagens/materias/02.jpg" alt="Imagem da matéria">
+      <div class="blog-info">
+        <p class="blog-meta">04/06/2025 às 16:15 • 4 min de leitura</p>
+        <h3 class="blog-title">5 Créditos Tributários que Poucos Conhecem</h3>
+        <a href="materia2.html" class="read-more">Leia mais</a>
       </div>
     </article>
 
-    <article class="blog-post">
-      <img src="imagens/blog/03.avif" alt="Tecnologia em ônibus" />
-      <div class="post-info">
-        <div class="post-meta">
-          <time datetime="2025-05-05T16:45">5 de Maio, 16:45</time>
-          <span class="reading-time">6 min de leitura</span>
-        </div>
-        <h3>Inovações tecnológicas que transformam o transporte coletivo</h3>
-        <a href="innovacoes-tecnologicas.html" class="btn-read-more">Ler mais</a>
+    <article class="blog-card">
+      <img src="imagens/materias/03.jpg" alt="Imagem da matéria">
+      <div class="blog-info">
+        <p class="blog-meta">03/06/2025 às 09:00 • 2 min de leitura</p>
+        <h3 class="blog-title">Recuperação de ICMS: O Que Você Precisa Saber</h3>
+        <a href="materia3.html" class="read-more">Leia mais</a>
       </div>
     </article>
 
+  </div>
+</sec>
+
+<section class="presenca-section">
+  <div class="gps-logo">
+    <!-- Ícone GPS em SVG -->
+    <svg width="60" height="60" viewBox="0 0 24 24" fill="#25d366" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 2C8.13401 2 5 5.13401 5 9C5 13.25 12 22 12 22C12 22 19 13.25 19 9C19 5.13401 15.866 2 12 2ZM12 11.5C10.3431 11.5 9 10.1569 9 8.5C9 6.84315 10.3431 5.5 12 5.5C13.6569 5.5 15 6.84315 15 8.5C15 10.1569 13.6569 11.5 12 11.5Z"/>
+    </svg>
+  </div>
+  <div class="presenca-texto">
+    <p>A <strong>SOFT AgroInvest</strong> está presente em:</p>
+    <h2><span id="digitando"></span><span class="cursor">|</span></h2>
   </div>
 </section>
 
 
+<a href="https://wa.me/SEUNUMERO" class="whatsapp-button" target="_blank" aria-label="Fale conosco pelo WhatsApp">
+  <img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="WhatsApp">
+</a>
 
-<!-- HTML do Footer -->
-<footer class="footer-bdb">
+
+<footer class="site-footer">
   <div class="footer-container">
-    <div class="footer-column">
-      <h3>Black Diamond Bus</h3>
-      <p>Exelência em alugueis de ônibus para prefeituras.</p>
-    </div>
-    <div class="footer-column">
-      <h4>Links Rápidos</h4>
-      <ul>
-        <li><a href="sobre-nos.html">Sobre Nós</a></li>
-        <li><a href="faq.html">FAQ</a></li>
-        <li><a href="/contato">Contato</a></li>
-        <li><a href="/politica">Política de Privacidade</a></li>
-      </ul>
-    </div>
-    <div class="footer-column">
-      <h4>Contato</h4>
-      <p>📍 Rua Diamante Negro, 100<br>São Paulo - SP</p>
-      <p>📞 (11) 99999-0000<br>✉️ contato@blackdiamondbus.com</p>
-    </div>
-    <div class="footer-column">
-      <h4>Fique por dentro</h4>
-      <form class="newsletter-form">
-        <input type="email" placeholder="Seu e-mail" />
-        <button type="submit">Inscrever</button>
-      </form>
-      <div class="social-icons">
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-whatsapp"></i></a>
-      </div>
+   
+    
+    <div class="footer-info">
+    
     </div>
   </div>
   <div class="footer-bottom">
-    <p>© 2025 Black Diamond Bus. Todos os direitos reservados.</p>
+    <p>&copy; 2025 Soft AgroInvest. Todos os direitos reservados.</p>
   </div>
 </footer>
 
 
+
   <script>
-   
-  document.getElementById("menu-toggle").addEventListener("click", function () {
-    document.querySelector(".nav ul").classList.toggle("active");
-  });
+    const locais = [
+    "Distrito Federal",
+    "Bahia",
+    "Goiás",
+    "São Paulo",
+    "Lisboa"
+  ];
 
-  document.getElementById('whatsappForm').addEventListener('submit', function (e) {
-    e.preventDefault();
+  let i = 0;
+  let j = 0;
+  let atual = "";
+  let apagando = false;
 
-    const nome = this.nome.value.trim();
-    const telefone = this.telefone.value.trim();
-    const quantidade = this.quantidade.value;
-    const data = this.data.value;
-    const mensagem = this.mensagem.value.trim();
-
-    const texto = `*Solicitação de Ata - Black Diamond Bus*%0A` +
-                  `👤 Nome/Prefeitura: ${nome}%0A` +
-                  `👤 Cargo: ${nome}%0A` +
-                  `📞 Telefone: ${telefone}%0A` +
-                  `🚌 Quantidade de ônibus: ${quantidade}%0A` +
-                  `📅 Data de retirada: ${data}%0A` +
-                  `✉️ Mensagem: ${mensagem || 'N/A'}`;
-
-    const numeroWhatsApp = '+5561996067198'; // Substitua com seu número (ex: 55 + DDD + número)
-
-    window.open(`https://wa.me/${numeroWhatsApp}?text=${texto}`, '_blank');
-  });
-
-
-
-
-  function revealOnScroll01() {
-    const cards01 = document.querySelectorAll('.info-card01');
-    const trigger01 = window.innerHeight * 0.85;
-
-    cards01.forEach(card => {
-      const top = card.getBoundingClientRect().top;
-      if (top < trigger01) {
-        card.classList.add('show01');
-      }
-    });
+  function digitar() {
+    const texto = locais[i];
+    if (!apagando && j < texto.length) {
+      atual += texto.charAt(j++);
+      document.getElementById("digitando").textContent = atual;
+      setTimeout(digitar, 100);
+    } else if (apagando && j > 0) {
+      atual = texto.substring(0, --j);
+      document.getElementById("digitando").textContent = atual;
+      setTimeout(digitar, 50);
+    } else {
+      apagando = !apagando;
+      if (!apagando) i = (i + 1) % locais.length;
+      setTimeout(digitar, 1000);
+    }
   }
 
-  window.addEventListener('scroll', revealOnScroll01);
-  window.addEventListener('load', revealOnScroll01);
+  digitar();
 
 
+// Força reprodução do vídeo (caso o navegador bloqueie o autoplay)
+    window.addEventListener("DOMContentLoaded", () => {
+      const video = document.getElementById("bgVideo");
+      if (video) {
+        video.play().catch((e) => {
+          console.log("Tentando forçar reprodução do vídeo...", e);
+        });
+      }
+    });
+ 
 
+    const toggle = document.getElementById('menu-toggle');
+  const navLinks = document.getElementById('nav-links');
 
+  toggle.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+  });
+
+  window.addEventListener('load', () => {
+    const modal = document.getElementById('popupModal');
+    const closeBtn = document.querySelector('.close');
+
+    modal.style.display = 'block';
+
+    closeBtn.onclick = () => {
+      modal.style.display = 'none';
+    };
+
+    window.onclick = (event) => {
+      if (event.target == modal) {
+        modal.style.display = 'none';
+      }
+    };
+  });
   </script>
 </body>
 </html>
