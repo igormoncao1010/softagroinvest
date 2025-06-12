@@ -761,6 +761,52 @@
   color: #000;
 }
 
+
+      .cotacao-wrapper {
+    background: #1a1a1a;
+    padding: 10px 20px;
+    overflow-x: hidden;
+    display: flex;
+    gap: 30px;
+    width: 100vw;
+  }
+  .cotacao-bar, .cotacao-clone {
+    display: flex;
+    gap: 30px;
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+  .moeda {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: white;
+    min-width: 100px;
+  }
+  .valor {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .subiu {
+    color: #4CAF50;
+  }
+  .desceu {
+    color: #E53935;
+  }
+  @media (min-width: 768px) {
+    .cotacao-wrapper {
+      justify-content: center;
+      overflow-x: visible;
+    }
+    .cotacao-clone {
+      display: none;
+    }
+  }
+
   </style>
 </head>
 <body>
@@ -790,6 +836,7 @@
     <a href="juridico.html"><button class="login-btn">Login</button></a>
   </nav>
 </header>
+  
 
 
 <section class="video-section">
@@ -805,6 +852,31 @@
       <p class="fade-in-up">Otimize seus recursos recuperando créditos fiscais com agilidade e transparência</p>
     </div>
   </section>
+
+  <section class="cotacao-wrapper" id="cotacaoWrapper">
+  <section class="cotacao-bar" id="cotacaoBar">
+    <div class="moeda">
+      <div>USD</div>
+      <div id="usd" class="valor">...</div>
+    </div>
+    <div class="moeda">
+      <div>EUR</div>
+      <div id="eur" class="valor">...</div>
+    </div>
+    <div class="moeda">
+      <div>GOLD</div>
+      <div id="gold" class="valor">...</div>
+    </div>
+    <div class="moeda">
+      <div>BTC</div>
+      <div id="btc" class="valor">...</div>
+    </div>
+  </section>
+
+  <section class="cotacao-clone" id="cotacaoClone" aria-hidden="true">
+    <!-- será preenchido via JS -->
+  </section>
+</section>
 
 
 <section class="recuperacao-tributaria">
@@ -1119,6 +1191,143 @@ previstos em lei.</p>
       }
     };
   });
+
+
+    let ultimoValor = {
+  usd: null,
+  eur: null,
+  gold: null,
+  btc: null
+};
+
+const cotacaoBar = document.getElementById('cotacaoBar');
+const cotacaoClone = document.getElementById('cotacaoClone');
+const cotacaoWrapper = document.getElementById('cotacaoWrapper');
+
+// Criar cópia visual sem IDs para o clone
+function criarCopiaVisual() {
+  cotacaoClone.innerHTML = '';
+  const moedasOriginais = cotacaoBar.querySelectorAll('.moeda');
+  moedasOriginais.forEach(moeda => {
+    const clone = moeda.cloneNode(true);
+    const valorDiv = clone.querySelector('.valor');
+    if(valorDiv) valorDiv.removeAttribute('id');
+    cotacaoClone.appendChild(clone);
+  });
+}
+
+function formatarValor(valor, decimals = 2) {
+  return valor.toFixed(decimals).replace('.', ',');
+}
+
+function calcularClasseESeta(id, novoValor) {
+  let classe = '';
+  let seta = '';
+  if (ultimoValor[id] !== null) {
+    if (novoValor > ultimoValor[id]) {
+      classe = 'subiu';
+      seta = '▲';
+    } else if (novoValor < ultimoValor[id]) {
+      classe = 'desceu';
+      seta = '▼';
+    }
+  }
+  const texto = novoValor === null ? 'Erro' : `R$ ${formatarValor(novoValor, id === 'btc' ? 0 : 2)}${seta ? ' ' + seta : ''}`;
+  ultimoValor[id] = novoValor;
+  return {classe, texto};
+}
+
+function atualizarElemento(id, novoValor, textoClasse) {
+  const elem = document.getElementById(id);
+  if (!elem) return;
+
+  if (novoValor === null) {
+    elem.textContent = 'Erro';
+    elem.className = 'valor';
+  } else {
+    elem.textContent = textoClasse.texto;
+    elem.className = `valor ${textoClasse.classe}`;
+  }
+
+  // Atualizar clone correspondente
+  const index = ['usd','eur','gold','btc'].indexOf(id);
+  if(index >= 0) {
+    const cloneValor = cotacaoClone.children[index].querySelector('.valor');
+    if(cloneValor) {
+      cloneValor.textContent = textoClasse.texto;
+      cloneValor.className = `valor ${textoClasse.classe}`;
+    }
+  }
+}
+
+async function atualizarCotacoes() {
+  try {
+    const moedas = await fetch('https://economia.awesomeapi.com.br/last/USD-BRL,EUR-BRL,XAU-USD,BTC-BRL')
+      .then(res => res.json());
+
+    function pegarValor(codigo) {
+      if(moedas[codigo] && moedas[codigo].bid) {
+        return parseFloat(moedas[codigo].bid);
+      }
+      return null;
+    }
+
+    const usd = pegarValor('USDBRL');
+    const eur = pegarValor('EURBRL');
+    const ouroUSD = pegarValor('XAUUSD');
+    const usdBRL = pegarValor('USDBRL');
+    const btcRaw = pegarValor('BTCBRL');
+
+    let ouroBRL = null;
+    if(ouroUSD !== null && usdBRL !== null) {
+      ouroBRL = ouroUSD * usdBRL;
+    }
+
+    let btc = btcRaw !== null ? btcRaw : null;
+
+    atualizarElemento('usd', usd, calcularClasseESeta('usd', usd));
+    atualizarElemento('eur', eur, calcularClasseESeta('eur', eur));
+    atualizarElemento('gold', ouroBRL, calcularClasseESeta('gold', ouroBRL));
+    atualizarElemento('btc', btc, calcularClasseESeta('btc', btc));
+
+  } catch (e) {
+    console.error('Erro geral:', e);
+    ['usd','eur','gold','btc'].forEach(id => {
+      atualizarElemento(id, null, {classe:'', texto:'Erro'});
+      ultimoValor[id] = null;
+    });
+  }
+}
+
+criarCopiaVisual();
+atualizarCotacoes();
+setInterval(atualizarCotacoes, 60000);
+
+let scrollPos = 0;
+
+function animarCarrosselContinuo() {
+  if(window.innerWidth >= 768) {
+    cotacaoWrapper.scrollLeft = 0;
+    requestAnimationFrame(animarCarrosselContinuo);
+    return;
+  }
+
+  const scrollMax = cotacaoBar.scrollWidth;
+
+  scrollPos++;
+  if(scrollPos >= scrollMax) scrollPos = 0;
+
+  cotacaoWrapper.scrollLeft = scrollPos;
+
+  requestAnimationFrame(animarCarrosselContinuo);
+}
+
+animarCarrosselContinuo();
+
+window.addEventListener('resize', () => {
+  scrollPos = cotacaoWrapper.scrollLeft;
+  criarCopiaVisual();
+});
   </script>
 </body>
 </html>
